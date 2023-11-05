@@ -11,6 +11,6 @@ credentials = {
     'password' : 'IOTGruppe1',
     'ADAFRUIT_IO_URL' : b'io.adafruit.com',
     'ADAFRUIT_USERNAME' : b'oqoqo',
-    'ADAFRUIT_IO_KEY' : b'aio_Lukz15PjWOHMPQyFs138AM3ZxBcH',
+    'ADAFRUIT_IO_KEY' : b'den får du ikke at vide! :)',
     'ADAFRUIT_IO_FEEDNAME' : b'iotproj-1'
     }
