@@ -193,7 +193,7 @@ while True:
             if Stage == 1: 										  	   # Her har vi vores første stage, af de to den alternerer mellem.
                 mqtt.web_print(getBattery())						   # Hemter batteri % og afsender til Adafruit.io Dashboard
                 lat1 = gps.get_latitude()							   # Hemter første set af koordinater
-                lon1 = gps.get_longitude()							   # ^										   # Lav om stage til 0, så det looper uendligt
+                lon1 = gps.get_longitude()							   # 
             if Stage == 2:											   # Stage 2
                 gps_ticks()											   # Eksekver gps_ticks() funktion
                 mqtt.web_print(gps_ticks(), 'oqoqo/feeds/iotmap1/csv') # Afsend al data om nuvarende pos til Adafruit.io Dashboard
@@ -204,10 +204,10 @@ while True:
                 print(TotalM)										   #Her printer vi ud alle de relevante data vi vil have udprintet, så vi ved dem.
                 print("Forventede hastighed")						   #
                 print(gps.get_speed())								   # + Hastighed, hvorfor ikke?
-            if Stage == 3: 										  	   # Her har vi vores første stage, af de to den alternerer 
-                mqtt.web_print(TotalM, 'oqoqo/feeds/iotproj1')
-                Stage = 0	
-            if TotalM > 100 and TotalM < 1000:
+            if Stage == 3: 										  	   # Her har vi vores første stage, af de forskellige den alternerer 
+                mqtt.web_print(TotalM, 'oqoqo/feeds/iotproj1')		   # send totale meter berørt sig til AdaFruit
+                Stage = 0											   # # Lav om stage til 0, så det looper uendligt
+                if TotalM > 100 and TotalM < 1000:
                     np[0] = (1,0,1)
                     np.write()
             elif TotalM > 1000 and TotalM < 2000: # Her checker vi værdien af TotalMeter for at vise mængde meter løbet under session, vist i farve. Dette viser vi i lysiode 0.
